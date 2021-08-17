@@ -7,9 +7,8 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:prettier/recommended",
-        "plugin:react-hooks/reccommended",
-        "prettier",
-        "prettier/react"
+        "plugin:react-hooks/recommended",
+        "prettier"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -23,6 +22,6 @@
         "prettier"
     ],
     "rules": {
-        "react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off"
     }
 }
