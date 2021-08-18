@@ -6,7 +6,7 @@ export const SearchCountry = styled.section`
     max-width: 1200px;
     margin: 40px auto;
     align-items: center;
-    div {
+    form {
         width: 400px;
         position: relative;
         display: flex;
