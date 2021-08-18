@@ -1,37 +1,89 @@
 import Header from '../../components/Header';
 import { SearchCountry, Countries } from './styles.js';
-import CountryList from '../../components/CountryList';
+import { useEffect, useState } from 'react';
+import api from '../../services/api';
+import CountryCard from '../../components/CountryCard';
 
 export default function Home() {
+    const [country, setCountry] = useState(Array);
+    const [loading, setLoading] = useState(true);
+    const [selectValue, setSelectValue] = useState('all');
+    const [searchValue, setSearchValue] = useState('');
+
+    function Search(e) {
+        e.preventDefault();
+        api.get(`name/${searchValue.trim()}`)
+            .then(res => {
+                setCountry(res.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    function FilterCountry() {
+        api.get(`region/${selectValue}`)
+            .then(res => {
+                setCountry(res.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    useEffect(() => {
+        api.get('all')
+            .then(res => {
+                if (selectValue !== 'all') FilterCountry();
+                if (selectValue === 'all') setCountry(res.data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectValue, searchValue]);
+
     return (
         <>
             <Header />
             <main>
                 <SearchCountry>
-                    <div className="search">
-                        <button>
+                    <form className="search" onSubmit={Search}>
+                        <button type="submit">
                             <i className="fas fa-search"></i>
                         </button>
                         <input
                             type="text"
                             placeholder="Search for a country..."
+                            value={searchValue}
+                            onChange={e => setSearchValue(e.target.value)}
                         />
-                    </div>
+                    </form>
 
-                    <select name="regions" id="regions">
+                    <select
+                        name="regions"
+                        id="regions"
+                        value={selectValue}
+                        onChange={e => setSelectValue(e.target.value)}
+                    >
                         <option value="all" style={{ display: 'none' }}>
                             Filter By Regions
                         </option>
-                        <option value="africa">África</option>
-                        <option value="america">America</option>
-                        <option value="asia">Asia</option>
-                        <option value="europe">Europe</option>
-                        <option value="oceania">Oceania</option>
+                        <option value="Africa">África</option>
+                        <option value="Americas">America</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Oceania">Oceania</option>
                     </select>
                 </SearchCountry>
 
                 <Countries>
-                    <CountryList />
+                    {loading == false
+                        ? country.map(data => (
+                              <CountryCard data={data} key={data.numericCode} />
+                          ))
+                        : 'Loading...'}
                 </Countries>
             </main>
         </>
