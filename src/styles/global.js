@@ -13,4 +13,14 @@ export const GlobalStyle = createGlobalStyle`
 body {
     background-color: hsl(0, 0%, 95%);
 }
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 `;
