@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Back = styled.div`
-    background-color: hsl(0, 0%, 100%);
+    background-color: ${props => props.theme.elements};
     max-width: 110px;
     text-align: center;
     align-items: center;
     border-radius: 8px;
     padding: 10px;
     margin: 50px 0px;
-    box-shadow: 0px 0px 10px hsl(0, 0%, 82%);
+    box-shadow: 0px 0px 10px ${props => props.theme.boxShadow};
     cursor: pointer;
     i {
         margin-right: 4px;
@@ -48,11 +48,18 @@ export const Details = styled.section`
     .BorderCountries {
         margin-top: 40px;
 
+        p {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
         .border {
-            background-color: hsl(0, 0%, 100%);
-            padding: 10px;
-            box-shadow: 0px 0px 10px hsl(0, 0%, 82%);
-            border-radius: 8px;
+            background-color: ${props => props.theme.elements};
+            padding: 7px;
+            box-shadow: 0px 0px 10px ${props => props.theme.boxShadow};
+            border-radius: 4px;
+            margin-left: 4px;
+            margin-bottom: 3px;
         }
     }
 `;

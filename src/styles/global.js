@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -11,16 +11,29 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    background-color: hsl(0, 0%, 95%);
+    background-color: ${props => props.theme.body};
+    color: ${props => props.theme.color};
 }
 
 a {
     text-decoration: none;
-    color: #000;
+    color: ${props => props.theme.color};
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
 }
+`;
+
+export const ChangeTheme = styled.div`
+    position: absolute;
+    right: 0px;
+    top: 18px;
+    margin-right: 60px;
+    cursor: pointer;
+    font-weight: 600;
+    i {
+        color: ${props => props.theme.color};
+    }
 `;

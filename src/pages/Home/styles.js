@@ -14,14 +14,22 @@ export const SearchCountry = styled.section`
             padding: 12px;
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
-            background-color: hsl(0, 0%, 100%);
+            background-color: ${props => props.theme.elements};
+            i {
+                color: ${props => props.theme.color};
+            }
         }
         input {
             padding: 12px;
             border-top-right-radius: 8px;
             border-bottom-right-radius: 8px;
+            background-color: ${props => props.theme.elements};
             width: 100%;
             outline: 0;
+            color: ${props => props.theme.color};
+            &::placeholder {
+                color: ${props => props.theme.color};
+            }
         }
     }
 
@@ -30,6 +38,9 @@ export const SearchCountry = styled.section`
         height: 42px;
         padding: 5px;
         outline: 0;
+        border: none;
+        background-color: ${props => props.theme.elements};
+        color: ${props => props.theme.color};
     }
 `;
 

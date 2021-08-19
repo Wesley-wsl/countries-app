@@ -4,21 +4,14 @@ export const HeaderStyle = styled.header`
     display: flex;
     justify-content: space-between;
     padding: 12px;
-    background-color: hsl(0, 0%, 100%);
+    background-color: ${props => props.theme.elements};
     align-items: center;
-    box-shadow: 0px 0px 10px hsl(0, 0%, 85%);
+    box-shadow: 0px 0px 10px ${props => props.theme.boxShadow};
 
     h1 {
         margin-left: 60px;
         font-size: 25px;
-    }
-
-    div {
-        margin-right: 60px;
+        color: ${props => props.theme.color};
         cursor: pointer;
-        font-weight: 600;
-        i {
-            color: #000;
-        }
     }
 `;

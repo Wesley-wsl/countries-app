@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const CardStyle = styled.div`
-    background-color: #fff;
+    background-color: ${props => props.theme.elements};
     border-radius: 10px;
-    height: 300px;
+    height: 310px;
     margin-bottom: 40px;
     img {
         width: 250px;
