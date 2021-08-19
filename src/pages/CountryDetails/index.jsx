@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Header from '../../components/Header';
 import api from '../../services/api';
 import { Back, Details } from './styles';
-// import COUNTRYCODES from './countryCodes';
+import COUNTRYCODES from '../../services/countryCodes';
 
 export default function CountryDetails() {
     const alphaCode = useParams();
@@ -23,11 +23,11 @@ export default function CountryDetails() {
         <>
             <Header />
             <main>
-                <Back>
-                    <Link to="/">
+                <Link to="/">
+                    <Back>
                         <i className="fas fa-long-arrow-alt-left"></i> Back
-                    </Link>
-                </Back>
+                    </Back>
+                </Link>
                 {country !== undefined ? (
                     <Details>
                         <img
@@ -93,7 +93,7 @@ export default function CountryDetails() {
                                             className="border"
                                             key={index}
                                         >
-                                            {border}
+                                            {COUNTRYCODES[`${border}`]}
                                         </Link>
                                     ))}
                                 </p>
