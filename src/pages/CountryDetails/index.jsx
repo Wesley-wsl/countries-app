@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Header from '../../components/Header';
 import api from '../../services/api';
-import { Back, Details } from './styles';
+import { Back, Container, Details } from './styles';
 import COUNTRYCODES from '../../services/countryCodes';
 
 export default function CountryDetails() {
@@ -16,6 +16,7 @@ export default function CountryDetails() {
             })
             .catch(error => {
                 console.log(error);
+                window.location.href = './';
             });
     }, [alphaCode]);
 
@@ -23,11 +24,14 @@ export default function CountryDetails() {
         <>
             <Header />
             <main>
-                <Link to="/">
-                    <Back>
-                        <i className="fas fa-long-arrow-alt-left"></i> Back
-                    </Back>
-                </Link>
+                <Container>
+                    <div onClick={() => history.back()}>
+                        <Back>
+                            <i className="fas fa-long-arrow-alt-left"></i> Back
+                        </Back>
+                    </div>
+                </Container>
+
                 {country !== undefined ? (
                     <Details>
                         <img
