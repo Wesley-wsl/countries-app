@@ -60,22 +60,24 @@ export default function Home() {
                             onChange={e => setSearchValue(e.target.value)}
                         />
                     </form>
-
-                    <select
-                        name="regions"
-                        id="regions"
-                        value={selectValue}
-                        onChange={e => setSelectValue(e.target.value)}
-                    >
-                        <option value="all" style={{ display: 'none' }}>
-                            Filter By Regions
-                        </option>
-                        <option value="Africa">África</option>
-                        <option value="Americas">America</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Oceania">Oceania</option>
-                    </select>
+                    <div>
+                        <select
+                            name="regions"
+                            id="regions"
+                            value={selectValue}
+                            onChange={e => setSelectValue(e.target.value)}
+                        >
+                            <option value="all" style={{ display: 'none' }}>
+                                Filter By Regions
+                            </option>
+                            <option value="Africa">África</option>
+                            <option value="Americas">America</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                        <i className="fas fa-angle-down"></i>
+                    </div>
                 </SearchCountry>
 
                 <Countries>
