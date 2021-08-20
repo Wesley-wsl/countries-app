@@ -14,4 +14,11 @@ export const HeaderStyle = styled.header`
         color: ${props => props.theme.color};
         cursor: pointer;
     }
+
+    @media (max-width: 530px) {
+        h1 {
+            font-size: 15px;
+            margin-left: 10px;
+        }
+    }
 `;

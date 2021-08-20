@@ -5,6 +5,7 @@ export const CardStyle = styled.div`
     border-radius: 10px;
     height: 310px;
     margin-bottom: 40px;
+    margin-right: 45px;
     img {
         width: 250px;
         border-top-right-radius: 7px;
@@ -25,5 +26,9 @@ export const CardStyle = styled.div`
 
     p > span {
         font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+        margin-right: 0px;
     }
 `;

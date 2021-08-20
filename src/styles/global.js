@@ -36,4 +36,10 @@ export const ChangeTheme = styled.div`
     i {
         color: ${props => props.theme.color};
     }
+
+    @media (max-width: 530px) {
+        font-size: 13px;
+        top: 14px;
+        margin-right: 10px;
+    }
 `;
