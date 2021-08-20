@@ -8,17 +8,18 @@ export default function CountryCard(props) {
             <Link to={`details/${props.data.alpha3Code}`}>
                 <img src={props.data.flag} alt={`Flag ${props.data.name}`} />
                 <h3>{props.data.name}</h3>
+
+                <p>
+                    <span>Population</span>:{' '}
+                    {props.data.population.toLocaleString()}
+                </p>
+                <p>
+                    <span>Region</span>: {props.data.region}
+                </p>
+                <p>
+                    <span>Capital</span>: {props.data.capital}
+                </p>
             </Link>
-            <p>
-                <span>Population</span>:{' '}
-                {props.data.population.toLocaleString()}
-            </p>
-            <p>
-                <span>Region</span>: {props.data.region}
-            </p>
-            <p>
-                <span>Capital</span>: {props.data.capital}
-            </p>
         </CardStyle>
     );
 }
