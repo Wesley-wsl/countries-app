@@ -27,10 +27,9 @@ countries-app is a project that show all countries and your main informations.
 
 <li><a href="https://reactjs.org">React.js</a></li>
 <li><a href="https://styled-components.com">Styled-components</a></li>
-<li><a href="https://www.typescriptlang.org">Typescript</a></li>
-<li><a href="https://www.themoviedb.org">themoviedb API</a></li>
+<li><a href="https://restcountries.eu">Rest Countries API</a></li>
 <li><a href="https://github.com/axios/axios">Axios</a></li>
-<li><a href="https://www.npmjs.com/package/react-scroll">React-scroll</a></li>
+<li><a href="https://reactrouter.com/web/guides/quick-start">react-router-dom</a></li>
 <li><a href="https://eslint.org">eslint</a></li>
 <li><a href="https://prettier.io">prettier</a></li>
 <li><a href="https://editorconfig.org">EditorConfig</a></li>
