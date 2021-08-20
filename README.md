@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Countries-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo 📸
 
-## Available Scripts
+<p align='center'> <img src='./src/design/desktop-preview.jpg'/></p>
 
-In the project directory, you can run:
+<hr/>
 
-### `yarn start`
+## Application deploy with netlify: :dash:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> https://countries-app-wsl.netlify.app
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📜 About the Project
 
-### `yarn test`
+countries-app is a project that show all countries and your main informations.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📋 User Stories:
 
-### `yarn build`
+ - [x] - See all countries from the API on the homepage
+ - [x] - Search for a country using an `input` field
+ - [x] - Filter countries by region
+ - [x] - Click on a country to see more detailed information on a separate page
+ - [x] - Click through to the border countries on the detail page
+ - [x] - Toggle the color scheme between light and dark mode *(optional)*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🛠 Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<li><a href="https://reactjs.org">React.js</a></li>
+<li><a href="https://styled-components.com">Styled-components</a></li>
+<li><a href="https://www.typescriptlang.org">Typescript</a></li>
+<li><a href="https://www.themoviedb.org">themoviedb API</a></li>
+<li><a href="https://github.com/axios/axios">Axios</a></li>
+<li><a href="https://www.npmjs.com/package/react-scroll">React-scroll</a></li>
+<li><a href="https://eslint.org">eslint</a></li>
+<li><a href="https://prettier.io">prettier</a></li>
+<li><a href="https://editorconfig.org">EditorConfig</a></li>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<hr/>
 
-### `yarn eject`
+## 💻 How to run the application
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Pre-requisites:
+You must have the tools installed:  <a href="">Git</a>, <a href="">Node.js</a>.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<pre>
+# In the terminal, clone the project:
+$ git clone https://github.com/Wesley-wsl/countries-app.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Enter the project folder:
+$ cd countries-app
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Install dependencies:
+$ yarn install
+ou
+$ npm install
 
-## Learn More
+# Run the application:
+$ yarn start
+ou
+$ npm run start
+</pre>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Okay, now you can access the application from the route:  <a href="https://localhost:3000/">https://localhost:3000/</a>
