@@ -13,11 +13,16 @@ export const Back = styled.div`
     i {
         margin-right: 4px;
     }
+
+    @media (max-width: 1143px) {
+        margin-left: 10px;
+    }
 `;
 
 export const Details = styled.section`
     display: flex;
     margin-bottom: 50px;
+    margin: 0 auto;
     img {
         max-width: 570px;
         margin-right: 50px;
@@ -62,4 +67,14 @@ export const Details = styled.section`
             margin-bottom: 3px;
         }
     }
+
+    @media (max-width: 1143px) {
+        flex-direction: column;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+`;
+
+export const Container = styled.div`
+    max-width: 110px;
 `;
