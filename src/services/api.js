@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://restcountries.eu/rest/v2/',
+    baseURL: 'https://restcountries.com/v2/',
 });
 
 export default api;
