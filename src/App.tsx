@@ -2,15 +2,14 @@ import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { Routes } from './routes';
+import { Router } from './routes';
 import { ChangeTheme, GlobalStyle } from './styles/global';
 import { Light, Dark } from './styles/themes/index';
 
 function App() {
     const [theme, setTheme] = useState('light');
-    const themeToggler = () => {
+    const themeToggler = () =>
         theme === 'light' ? setTheme('dark') : setTheme('light');
-    };
 
     return (
         <ThemeProvider theme={theme === 'light' ? Light : Dark}>
@@ -22,7 +21,7 @@ function App() {
                     </span>{' '}
                     Dark Mode
                 </ChangeTheme>
-                <Routes />
+                <Router />
             </BrowserRouter>
             <GlobalStyle />
         </ThemeProvider>
