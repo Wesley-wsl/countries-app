@@ -1,8 +1,9 @@
-import Header from '../../components/Header';
-import { SearchCountry, Countries } from './styles.js';
 import { useEffect, useState } from 'react';
-import api from '../../services/api';
+
 import CountryCard from '../../components/CountryCard';
+import Header from '../../components/Header';
+import api from '../../services/api';
+import { SearchCountry, Countries } from './styles.js';
 
 export default function Home() {
     const [country, setCountry] = useState(Array);

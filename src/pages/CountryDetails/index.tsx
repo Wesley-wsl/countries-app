@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+
 import Header from '../../components/Header';
 import api from '../../services/api';
-import { Back, Container, Details } from './styles';
 import COUNTRYCODES from '../../services/countryCodes';
+import { Back, Container, Details } from './styles';
 
 export default function CountryDetails() {
     const alphaCode = useParams();

@@ -1,9 +1,10 @@
-import { BrowserRouter } from 'react-router-dom';
-import { ChangeTheme, GlobalStyle } from './styles/global';
-import { ThemeProvider } from 'styled-components';
-import { Light, Dark } from './styles/themes/index';
-import { Routes } from './routes';
 import { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+
+import { Routes } from './routes';
+import { ChangeTheme, GlobalStyle } from './styles/global';
+import { Light, Dark } from './styles/themes/index';
 
 function App() {
     const [theme, setTheme] = useState('light');
