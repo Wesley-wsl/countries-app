@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
+import { ITheme } from '../@types';
+
 export const GlobalStyle = createGlobalStyle`
 
 * {
@@ -11,13 +13,13 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    background-color: ${props => props.theme.body};
-    color: ${props => props.theme.color};
+    background-color: ${({ theme }: ITheme) => theme.body};
+    color: ${({ theme }: ITheme) => theme.color};
 }
 
 a {
     text-decoration: none;
-    color: ${props => props.theme.color};
+    color: ${({ theme }: ITheme) => theme.color};
 }
 
 main {
@@ -34,7 +36,7 @@ export const ChangeTheme = styled.div`
     cursor: pointer;
     font-weight: 600;
     i {
-        color: ${props => props.theme.color};
+        color: ${({ theme }: ITheme) => theme.color};
     }
 
     @media (max-width: 530px) {

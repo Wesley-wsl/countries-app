@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
+import { ICountries } from '../../@types';
 import Header from '../../components/Header';
 import api from '../../services/api';
-import COUNTRYCODES from '../../services/countryCodes';
+import countryCodes from '../../utils/countryCodes';
 import { Back, Container, Details } from './styles';
 
 export default function CountryDetails() {
     const alphaCode = useParams();
-    const [country, setCountry] = useState(undefined);
+    const [country, setCountry] = useState<ICountries>();
 
     useEffect(() => {
         api.get(`alpha/${alphaCode.alphaCode}`)
@@ -92,15 +93,19 @@ export default function CountryDetails() {
                             <div className="BorderCountries">
                                 <p>
                                     <span>Border Countries:</span>{' '}
-                                    {country.borders.map((border, index) => (
-                                        <Link
-                                            to={`/details/${border}`}
-                                            className="border"
-                                            key={index}
-                                        >
-                                            {COUNTRYCODES[`${border}`]}
-                                        </Link>
-                                    ))}
+                                    {country.borders
+                                        ? country.borders.map(
+                                              (border, index) => (
+                                                  <Link
+                                                      to={`/details/${border}`}
+                                                      className="border"
+                                                      key={index}
+                                                  >
+                                                      {countryCodes[border]}
+                                                  </Link>
+                                              ),
+                                          )
+                                        : 'none'}
                                 </p>
                             </div>
                         </div>

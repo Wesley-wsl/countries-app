@@ -1,23 +1,23 @@
 import { Link } from 'react-router-dom';
 
+import { ICountriesData } from '../../@types';
 import { CardStyle } from './styles';
 
-export default function CountryCard(props) {
+export default function CountryCard({ data }: ICountriesData) {
     return (
         <CardStyle>
-            <Link to={`details/${props.data.alpha3Code}`}>
-                <img src={props.data.flag} alt={`Flag ${props.data.name}`} />
-                <h3>{props.data.name}</h3>
+            <Link to={`details/${data.alpha3Code}`}>
+                <img src={data.flag} alt={`Flag ${data.name}`} />
+                <h3>{data.name}</h3>
 
                 <p>
-                    <span>Population</span>:{' '}
-                    {props.data.population.toLocaleString()}
+                    <span>Population</span>: {data.population.toLocaleString()}
                 </p>
                 <p>
-                    <span>Region</span>: {props.data.region}
+                    <span>Region</span>: {data.region}
                 </p>
                 <p>
-                    <span>Capital</span>: {props.data.capital}
+                    <span>Capital</span>: {data.capital}
                 </p>
             </Link>
         </CardStyle>

@@ -1,35 +1,28 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
+import { ICountries } from '../../@types';
 import CountryCard from '../../components/CountryCard';
 import Header from '../../components/Header';
 import api from '../../services/api';
-import { SearchCountry, Countries } from './styles.js';
+import { SearchCountry, Countries } from './styles';
 
 export default function Home() {
-    const [country, setCountry] = useState(Array);
+    const [country, setCountry] = useState<ICountries[]>([]);
     const [loading, setLoading] = useState(true);
     const [selectValue, setSelectValue] = useState('all');
     const [searchValue, setSearchValue] = useState('');
 
-    function Search(e) {
+    function Search(e: FormEvent) {
         e.preventDefault();
         api.get(`name/${searchValue.trim()}`)
-            .then(res => {
-                setCountry(res.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+            .then(res => setCountry(res.data))
+            .catch(error => console.log(error));
     }
 
     function FilterCountry() {
         api.get(`region/${selectValue}`)
-            .then(res => {
-                setCountry(res.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+            .then(res => setCountry(res.data))
+            .catch(error => console.log(error));
     }
 
     useEffect(() => {
@@ -39,9 +32,7 @@ export default function Home() {
                 if (selectValue === 'all') setCountry(res.data);
                 setLoading(false);
             })
-            .catch(error => {
-                console.log(error);
-            });
+            .catch(error => console.log(error));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectValue, searchValue]);
 
