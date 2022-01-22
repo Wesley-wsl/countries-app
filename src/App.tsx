@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
+import Header from './components/Header';
 import { Router } from './routes';
-import { ChangeTheme, GlobalStyle } from './styles/global';
+import { GlobalStyle } from './styles/global';
 import { Light, Dark } from './styles/themes/index';
 
 function App() {
@@ -14,13 +15,7 @@ function App() {
     return (
         <ThemeProvider theme={theme === 'light' ? Light : Dark}>
             <BrowserRouter>
-                <ChangeTheme onClick={() => themeToggler()}>
-                    {' '}
-                    <span>
-                        <i className="far fa-moon"></i>
-                    </span>{' '}
-                    Dark Mode
-                </ChangeTheme>
+                <Header themeToggler={themeToggler} />
                 <Router />
             </BrowserRouter>
             <GlobalStyle />
