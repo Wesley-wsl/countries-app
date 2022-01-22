@@ -18,6 +18,7 @@ export const CardStyle = styled.div`
         border-top-right-radius: 7px;
         border-top-left-radius: 7px;
         height: 166px;
+        object-fit: cover;
     }
 
     h3 {
