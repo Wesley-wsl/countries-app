@@ -37,6 +37,7 @@ export const Filter = styled.div`
         margin-top: 3px;
         padding: 15px;
         list-style: none;
+        z-index: 5;
 
         li {
             border-radius: 3px;
