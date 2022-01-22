@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const countryCodes: any = {
     AFG: 'Afghanistan',
     ALA: 'Åland Islands',
