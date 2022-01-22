@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 import { ITheme } from '../@types';
 
@@ -26,22 +26,4 @@ main {
     max-width: 1200px;
     margin: 0 auto;
 }
-`;
-
-export const ChangeTheme = styled.div`
-    position: absolute;
-    right: 0px;
-    top: 18px;
-    margin-right: 60px;
-    cursor: pointer;
-    font-weight: 600;
-    i {
-        color: ${({ theme }: ITheme) => theme.color};
-    }
-
-    @media (max-width: 530px) {
-        font-size: 13px;
-        top: 14px;
-        margin-right: 10px;
-    }
 `;

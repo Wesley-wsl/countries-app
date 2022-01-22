@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { ITheme } from '../../@types';
+
 export const HeaderStyle = styled.header`
     display: flex;
     justify-content: space-between;
@@ -20,5 +22,20 @@ export const HeaderStyle = styled.header`
             font-size: 15px;
             margin-left: 10px;
         }
+    }
+`;
+
+export const ChangeTheme = styled.div`
+    margin-right: 60px;
+    cursor: pointer;
+    font-weight: 600;
+    i {
+        color: ${({ theme }: ITheme) => theme.color};
+    }
+
+    @media (max-width: 530px) {
+        font-size: 13px;
+        top: 14px;
+        margin-right: 10px;
     }
 `;
