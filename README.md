@@ -2,7 +2,7 @@
 
 ## Demo 📸
 
-<p align='center'> <img src='./src/design/desktop-preview.jpg'/></p>
+<p align='center'> <img src='.github/Countries-app.gif'/></p>
 
 <hr/>
 
@@ -29,6 +29,8 @@ countries-app is a project that show all countries and your main informations.
 <li><a href="https://styled-components.com">Styled-components</a></li>
 <li><a href="https://restcountries.eu">Rest Countries API</a></li>
 <li><a href="https://github.com/axios/axios">Axios</a></li>
+<li><a href="https://www.typescriptlang.org">TypeScript</a></li>
+<li><a href="https://www.davidhu.io/react-spinners/">React Spinners</a></li>
 <li><a href="https://reactrouter.com/web/guides/quick-start">react-router-dom</a></li>
 <li><a href="https://eslint.org">eslint</a></li>
 <li><a href="https://prettier.io">prettier</a></li>
@@ -50,12 +52,12 @@ $ cd countries-app
 
 # Install dependencies:
 $ yarn install
-ou
+or
 $ npm install
 
 # Run the application:
 $ yarn start
-ou
+or
 $ npm run start
 </pre>
 
