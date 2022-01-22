@@ -40,32 +40,6 @@ export const Details = styled.section`
         p {
             padding: 5px;
         }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            .left {
-                margin-right: 50px;
-            }
-        }
-    }
-
-    .BorderCountries {
-        margin-top: 40px;
-
-        p {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .border {
-            background-color: ${props => props.theme.elements};
-            padding: 7px;
-            box-shadow: 0px 0px 10px ${props => props.theme.boxShadow};
-            border-radius: 4px;
-            margin-left: 4px;
-            margin-bottom: 3px;
-        }
     }
 
     @media (max-width: 1143px) {
@@ -75,6 +49,28 @@ export const Details = styled.section`
     }
 `;
 
-export const Container = styled.div`
-    max-width: 110px;
+export const BorderCountries = styled.div`
+    margin-top: 40px;
+
+    p {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .border {
+        background-color: ${props => props.theme.elements};
+        padding: 7px;
+        box-shadow: 0px 0px 10px ${props => props.theme.boxShadow};
+        border-radius: 4px;
+        margin-left: 4px;
+        margin-bottom: 3px;
+    }
+`;
+
+export const Informations = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    .left {
+        margin-right: 50px;
+    }
 `;
