@@ -38,5 +38,6 @@ export interface IHeader {
     themeToggler: () => void;
 }
 export interface IFilter {
-    setCountry: Dispatch<SetStateAction<ICountries[]>>;
+    setFilter: Dispatch<SetStateAction<string>>;
+    filter: string;
 }
