@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
 
 import { IFilter } from '../../@types';
-import { useFilter } from '../../hooks/useFilter';
-import Loading from '../Loading';
 import * as S from './styles';
 
-const Filter: React.FC<IFilter> = ({ setCountry }) => {
-    const [region, setRegion] = useState('all');
+const Filter: React.FC<IFilter> = ({ setFilter, filter }) => {
     const [showFilter, setShowFilter] = useState(false);
-    const { loading } = useFilter(setCountry, region);
-
-    if (loading) return <Loading />;
 
     function handleChooseARegion(region: string) {
-        setRegion(region);
+        setFilter(region);
         setShowFilter(!showFilter);
     }
 
     return (
         <S.Filter>
             <button onClick={() => setShowFilter(!showFilter)}>
-                {region == 'all' ? 'Filter By Region' : region}
+                {filter == 'all' ? 'Filter By Region' : filter}
                 <i className="fas fa-angle-down"></i>
             </button>
             <ul style={showFilter ? { display: 'block' } : { display: 'none' }}>
