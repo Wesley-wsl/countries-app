@@ -1,51 +1,60 @@
-import { FormEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import { ICountries } from '../../@types';
 import CountryCard from '../../components/CountryCard';
 import Filter from '../../components/Filter';
-import api from '../../services/api';
+import Loading from '../../components/Loading';
+import { useFetch } from '../../hooks/useFetch';
 import * as S from './styles';
 
 export default function Home() {
-    const [country, setCountry] = useState<ICountries[]>([]);
     const [searchValue, setSearchValue] = useState('');
-    const navigate = useNavigate();
+    const [filter, setFilter] = useState('all');
 
-    function Search(e: FormEvent) {
-        e.preventDefault();
+    const { data } = useFetch('all');
 
-        if (searchValue.trim() === '') return;
-
-        api.get(`name/${searchValue}`)
-            .then(res => {
-                if (res.data.status == 404) return navigate('/notFound');
-                setCountry(res.data);
-            })
-            .catch(() => navigate('/notFound'));
-    }
+    if (!data) return <Loading />;
 
     return (
         <main>
             <S.SearchCountry>
-                <S.Search onSubmit={Search}>
-                    <button type="submit" aria-label="Search country by name">
+                <S.Search>
+                    <button type="button" aria-label="Search country by name">
                         <i className="fas fa-search"></i>
                     </button>
                     <input
                         type="text"
                         placeholder="Search for a country..."
                         value={searchValue}
-                        onChange={e => setSearchValue(e.target.value)}
+                        onChange={({ target }) => setSearchValue(target.value)}
                     />
                 </S.Search>
-                <Filter setCountry={setCountry} />
+                <Filter setFilter={setFilter} filter={filter} />
             </S.SearchCountry>
 
             <S.Countries>
-                {country.map(data => (
-                    <CountryCard data={data} key={data.numericCode} />
-                ))}
+                {data
+                    .filter((data: ICountries) => {
+                        if (searchValue === '') return data;
+                        if (
+                            data.name
+                                .toLowerCase()
+                                .includes(searchValue.toLowerCase())
+                        )
+                            return data;
+                    })
+                    .filter((data: ICountries) => {
+                        if (filter === 'all') return data;
+                        if (
+                            data.region
+                                .toLowerCase()
+                                .includes(filter.toLowerCase())
+                        )
+                            return data;
+                    })
+                    .map((data: ICountries) => (
+                        <CountryCard data={data} key={data.numericCode} />
+                    ))}
             </S.Countries>
         </main>
     );
