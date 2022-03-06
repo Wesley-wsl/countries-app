@@ -36,6 +36,7 @@ export interface IThemeProps {
 }
 export interface IHeader {
     themeToggler: () => void;
+    isLight: boolean;
 }
 export interface IFilter {
     setFilter: Dispatch<SetStateAction<string>>;
