@@ -12,7 +12,7 @@
 
 ## 📜 About the Project
 
-countries-app is a project that show all countries and your main informations.
+Countries-app is a project that show all countries and your main informations.
 
 ### 📋 User Stories:
 
@@ -21,13 +21,15 @@ countries-app is a project that show all countries and your main informations.
  - [x] - Filter countries by region
  - [x] - Click on a country to see more detailed information on a separate page
  - [x] - Click through to the border countries on the detail page
- - [x] - Toggle the color scheme between light and dark mode *(optional)*
+ - [x] - Toggle the color scheme between light and dark mode
+ - [x] - Keep dark/light mode, even after refreshing page
 
 ### 🛠 Technologies
 
 <li><a href="https://reactjs.org">React.js</a></li>
 <li><a href="https://styled-components.com">Styled-components</a></li>
 <li><a href="https://restcountries.eu">Rest Countries API</a></li>
+<li><a href="https://swr.vercel.app">SWR</a></li>
 <li><a href="https://github.com/axios/axios">Axios</a></li>
 <li><a href="https://www.typescriptlang.org">TypeScript</a></li>
 <li><a href="https://www.davidhu.io/react-spinners/">React Spinners</a></li>
@@ -41,7 +43,7 @@ countries-app is a project that show all countries and your main informations.
 ## 💻 How to run the application
 
 #### Pre-requisites:
-You must have the tools installed:  <a href="">Git</a>, <a href="">Node.js</a>.
+You must have the tools installed:  <a href="https://git-scm.com">Git</a>, <a href="https://nodejs.org/en/">Node.js</a>.
 
 <pre>
 # In the terminal, clone the project:
@@ -51,7 +53,7 @@ $ git clone https://github.com/Wesley-wsl/countries-app.git
 $ cd countries-app
 
 # Install dependencies:
-$ yarn install
+$ yarn
 or
 $ npm install
 
