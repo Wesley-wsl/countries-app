@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { IHeader } from '../../@types';
 import { ChangeTheme, HeaderStyle } from './styles';
 
-export default function Header({ themeToggler }: IHeader) {
+export default function Header({ themeToggler, isLight }: IHeader) {
     return (
         <HeaderStyle>
             <h1>
@@ -14,7 +14,7 @@ export default function Header({ themeToggler }: IHeader) {
                 <span>
                     <i className="far fa-moon"></i>
                 </span>{' '}
-                Dark Mode
+                {isLight ? 'Dark Mode' : 'Light Mode'}
             </ChangeTheme>
         </HeaderStyle>
     );

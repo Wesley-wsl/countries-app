@@ -8,28 +8,28 @@ import { GlobalStyle } from './styles/global';
 import { Light, Dark } from './styles/themes/index';
 
 function App() {
-    const [theme, setTheme] = useState('');
+    const [isLight, setIsLight] = useState(Boolean);
     const themeToggler = () => {
-        if (theme === 'light') {
-            localStorage.setItem('theme', 'dark');
-            setTheme('dark');
+        if (isLight) {
+            localStorage.removeItem('theme');
+            setIsLight(false);
         }
-        if (theme === 'dark') {
+        if (!isLight) {
             localStorage.setItem('theme', 'light');
-            setTheme('light');
+            setIsLight(true);
         }
     };
 
     useEffect(() => {
         const themeValue = localStorage.getItem('theme');
-        if (themeValue === 'light') return setTheme('light');
-        if (themeValue === 'dark') return setTheme('dark');
+        if (themeValue) return setIsLight(true);
+        if (!themeValue) return setIsLight(false);
     }, []);
 
     return (
-        <ThemeProvider theme={theme === 'light' ? Light : Dark}>
+        <ThemeProvider theme={isLight ? Light : Dark}>
             <BrowserRouter>
-                <Header themeToggler={themeToggler} />
+                <Header themeToggler={themeToggler} isLight={isLight} />
                 <Router />
             </BrowserRouter>
             <GlobalStyle />
