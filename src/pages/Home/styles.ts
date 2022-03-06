@@ -29,7 +29,7 @@ export const Countries = styled.section`
     }
 `;
 
-export const Search = styled.form`
+export const Search = styled.div`
     width: 400px;
     position: relative;
     display: flex;
